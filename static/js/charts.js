@@ -52,7 +52,7 @@ new Chart(winLossCtx, {
 });
 
 let daysAgo = [];
-let totalDays = Math.round((new Date(getDateString().replace(/-/g,"/")) - new Date(gData.start_date.replace(/-/g, "/"))) / (24 * 60 * 60 * 1000))
+let totalDays = Math.round((new Date(getDateString()) - new Date(gData.start_date)) / (24 * 60 * 60 * 1000))
 for (let i = Math.min(totalDays, 14); i >= 0; i--)
   daysAgo.push(i + " Days Ago");
 
@@ -91,5 +91,5 @@ $("#avg-guesses-value").html(
     Math.round(((gData.win_dist[1] + (gData.win_dist[2] * 2) + (gData.win_dist[3] * 3) + (gData.win_dist[4] * 4) +
             (gData.win_dist[5] * 5) + (gData.win_dist[6] * 6)) / gData.wins) * 100) / 100
 );
-$("#fplay-value").html(new Date(gData.start_date.replace(/-/g, "/")).toLocaleDateString());
-$("#lplay-value").html(gData.last_play ? new Date(gData.last_play.replace(/-/g, "/")).toLocaleDateString() : "None");
+$("#fplay-value").html(new Date(gData.start_date).toLocaleDateString());
+$("#lplay-value").html(gData.last_play ? new Date(gData.last_play).toLocaleDateString() : "None");
