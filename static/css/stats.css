@@ -1,0 +1,106 @@
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    background-color: #323232;
+}
+
+a {
+    text-decoration: none;
+}
+
+#geordle-header {
+    width: 100%;
+    height: fit-content;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    color: white;
+    font-family: system-ui;
+    font-size: 80px;
+    font-weight: bold;
+    background-color: #323232;
+    border-bottom: 1px solid white;
+}
+
+#charts-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-bottom: 10%;
+}
+
+.chart-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.chart-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#win-dist-bar-container, #avg-distance-history-container {
+    width: 35%;
+    height: fit-content;
+}
+
+#win-loss-pie-container {
+    width: 20%;
+    height: fit-content;
+    margin: 0;
+}
+
+#stats-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: fit-content;
+    height: fit-content;
+    margin: 0;
+}
+
+.stats-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.stats-field * {
+    margin: 20px;
+    color: white;
+    text-align: center;
+    font-family: system-ui;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+@media screen and (orientation: portrait) {
+    .chart-group {
+        flex-direction: column;
+    }
+
+    #win-dist-bar-container, #avg-distance-history-container {
+        width: 95%;
+    }
+
+    #win-loss-pie-container {
+        width: 70%;
+    }
+
+    #stats-container {
+        margin-top: 20px;
+    }
+
+    .stats-field * {
+        font-size: 40px;
+    }
+}

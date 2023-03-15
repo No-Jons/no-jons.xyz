@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stats</title>
+</head>
+<body>
+    <link href="/static/css/stats.css?{{ version }}" rel="stylesheet"/>
+    <script src="/static/lib/js/jquery.js"></script>
+
+    <a href="/geordle">
+        <div id="geordle-header">
+            <span style="color:red;">GEO</span>RDLE
+        </div>
+    </a>
+
+    <div id="charts-container">
+        <div class="chart-group">
+            <div id="win-dist-bar-container" class="chart-container">
+                <canvas id="win-dist-bar"></canvas>
+            </div>
+            <div id="avg-distance-history-container" class="chart-container">
+                <canvas id="avg-distance-history"></canvas>
+            </div>
+        </div>
+        <div class="chart-group">
+            <div id="win-loss-pie-container" class="chart-container">
+                <canvas id="win-loss-pie"></canvas>
+            </div>
+            <div id="stats-container" class="chart-container">
+                <div class="stats-row">
+                    <div class="stats-field">
+                        <div class="stats-header">Plays</div>
+                        <div id="plays-value" class="stats-value"></div>
+                    </div>
+                    <div class="stats-field">
+                        <div class="stats-header">Wins</div>
+                        <div id="wins-value" class="stats-value"></div>
+                    </div>
+                    <div class="stats-field">
+                        <div class="stats-header">Win %</div>
+                        <div id="winp-value" class="stats-value"></div>
+                    </div>
+                    <div class="stats-field">
+                        <div class="stats-header">Hard Mode</div>
+                        <div id="hard-mode-value" class="stats-value"></div>
+                    </div>
+                </div>
+                <div class="stats-row">
+                    <div class="stats-field">
+                        <div class="stats-header">Cur. Streak</div>
+                        <div id="streak-value" class="stats-value"></div>
+                    </div>
+                    <div class="stats-field">
+                        <div class="stats-header">Max Streak</div>
+                        <div id="mstreak-value" class="stats-value"></div>
+                    </div>
+                    <div class="stats-field">
+                        <div class="stats-header">Avg. Distance</div>
+                        <div id="avg-dist-value" class="stats-value"></div>
+                    </div>
+                </div>
+                <div class="stats-row">
+                    <div class="stats-field">
+                        <div class="stats-header">Avg. Guesses</div>
+                        <div id="avg-guesses-value" class="stats-value"></div>
+                    </div>
+                    <div class="stats-field">
+                        <div class="stats-header">First Played</div>
+                        <div id="fplay-value" class="stats-value"></div>
+                    </div>
+                    <div class="stats-field">
+                        <div class="stats-header">Last Played</div>
+                        <div id="lplay-value" class="stats-value"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/static/js/saves.js?{{ version }}"></script>
+    <script src="/static/js/charts.js?{{ version }}"></script>
+</body>
+</html>
