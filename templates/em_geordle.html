@@ -5,10 +5,10 @@
     <title>Extreme Mode</title>
 </head>
 <body>
-    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js?{{ version }}"></script>
-    <link href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css?{{ version }}" rel="stylesheet"/>
-    <script src="https://unpkg.com/esri-leaflet@3.0.10/dist/esri-leaflet.js?{{ version }}"></script>
-    <script src="https://unpkg.com/esri-leaflet-vector@4.0.1/dist/esri-leaflet-vector.js?{{ version }}"></script>
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+    <link href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" rel="stylesheet"/>
+    <script src="https://unpkg.com/esri-leaflet@3.0.10/dist/esri-leaflet.js"></script>
+    <script src="https://unpkg.com/esri-leaflet-vector@4.0.1/dist/esri-leaflet-vector.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFRU5p5PYXEwRjNkMF__ZrmqxJY8Hbfgs&callback=initialize" defer></script>
     <script src="/static/lib/js/jquery.js?{{ version }}"></script>
     <script src="/static/lib/js/confetti.js?{{ version }}"></script>
@@ -94,8 +94,9 @@
         </div>
     </div>
 
+    <script>let extremeMode = true;</script>
     <script src="/static/js/saves.js?{{ version }}"></script>
-    <script src="/static/js/em-streetview.js?{{ version }}"></script>
+    <script src="/static/js/streetview.js?{{ version }}"></script>
     <script src="/static/js/em-game.js?{{ version }}"></script>
 </body>
 </html>

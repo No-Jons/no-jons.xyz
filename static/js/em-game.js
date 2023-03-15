@@ -1,6 +1,5 @@
 let map;
 let curPoint;
-let curCoords;
 let mapElement = document.getElementById("osm-map")
 let guessIcon = L.icon({
     iconUrl: "/static/img/triangle.png",

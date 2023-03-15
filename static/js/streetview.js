@@ -12,7 +12,9 @@ function initializeStreetview(coords){
         {
             disableDefaultUI: true,
             motionTracking: false,
-            showRoadLabels: false
+            showRoadLabels: false,
+            linksControl: false,
+            clickToGo: !extremeMode
         }
     );
     const streetviewService = new google.maps.StreetViewService();
@@ -20,7 +22,7 @@ function initializeStreetview(coords){
         {
             location: coords,
             preference: "best",
-            radius: 1000,
+            radius: extremeMode ? 100 : 1000,
             source: "outdoor"
         },
         function(data){
@@ -49,7 +51,7 @@ function initializeStreetview(coords){
 }
 
 function getCurCoords() {
-    fetch(`/geordle/api/location?date=${getDateString()}&em=false`)
+    fetch(`/geordle/api/location?date=${getDateString()}&em=${extremeMode}`)
         .then((coords) => coords.json())
         .then((coords) => initializeStreetview(coords));
 }

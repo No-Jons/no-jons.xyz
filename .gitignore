@@ -114,5 +114,6 @@ dmypy.json
 .pyre/
 
 data/cities/
+auth.py
 .idea
 !static/lib/

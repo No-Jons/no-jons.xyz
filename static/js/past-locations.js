@@ -1,5 +1,5 @@
 let map;
-const mapElement = document.getElementById("game");
+const mapElement = document.getElementById("map");
 
 function initializeMap() {
     map = L.map(

@@ -1,6 +1,6 @@
 let map;
-const mapElement = document.getElementById("game");
-let gameIdx = Math.round((new Date(getDateString().replace(/-/g,'/')) - new Date("2023/2/12")) / (24 * 60 * 60 * 1000));
+const mapElement = document.getElementById("map");
+let gameIdx = Math.round((new Date(getDateString()) - new Date("2023/02/12")) / (24 * 60 * 60 * 1000));
 
 function initializeMap() {
     map = L.map(
