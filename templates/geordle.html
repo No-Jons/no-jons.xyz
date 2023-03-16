@@ -9,7 +9,7 @@
     <link href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" rel="stylesheet"/>
     <script src="https://unpkg.com/esri-leaflet@3.0.10/dist/esri-leaflet.js"></script>
     <script src="https://unpkg.com/esri-leaflet-vector@4.0.1/dist/esri-leaflet-vector.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFRU5p5PYXEwRjNkMF__ZrmqxJY8Hbfgs&callback=initialize" defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key={{ credentials['maps'] }}&callback=initialize" defer></script>
     <script src="/static/lib/js/jquery.js?{{ version }}"></script>
     <script src="/static/lib/js/confetti.js?{{ version }}"></script>
     <link href="/static/css/geordle.css?{{ version }}" rel="stylesheet"/>
@@ -146,7 +146,10 @@
         </div>
     </div>
 
-    <script>let extremeMode = false;</script>
+    <script>
+        let extremeMode = false;
+        let esriApiKey = "{{ credentials['esri'] }}";
+    </script>
     <script src="/static/js/saves.js?{{ version }}"></script>
     <script src="/static/js/game.js?{{ version }}"></script>
     <script src="/static/js/streetview.js?{{ version }}"></script>

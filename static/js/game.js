@@ -49,11 +49,10 @@ function initializeMap() {
             }
         );
 
-    const apiKey = "AAPK095e34f81e5f4f7a9b7b3d50232f32415SP4Iz9Grm4t9TiKeHh0Cmw2wrbBTZCitsWRXqX4Mai4kLbfudOawAmOn-5SwK6K";
     const basemapLayers = {
-        Default: L.esri.Vector.vectorBasemapLayer("ArcGIS:Streets", { apiKey: apiKey }).addTo(map),
-        Satellite: L.esri.Vector.vectorBasemapLayer("ArcGIS:Imagery", { apiKey: apiKey }),
-        OSM: L.esri.Vector.vectorBasemapLayer("OSM:Standard", { apiKey: apiKey })
+        Default: L.esri.Vector.vectorBasemapLayer("ArcGIS:Streets", { apiKey: esriApiKey }).addTo(map),
+        Satellite: L.esri.Vector.vectorBasemapLayer("ArcGIS:Imagery", { apiKey: esriApiKey }),
+        OSM: L.esri.Vector.vectorBasemapLayer("OSM:Standard", { apiKey: esriApiKey })
     };
 
     L.control.layers(basemapLayers, null, { collapsed: false, position: "bottomright"}).addTo(map);

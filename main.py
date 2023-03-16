@@ -6,12 +6,13 @@ from fastapi import FastAPI, Request
 from fastapi.responses import RedirectResponse, FileResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
+from util.auth import Auth
 
 app = FastAPI(docs_url=None)
 
 app.mount("/static", StaticFiles(directory="static"), name="static")
 templates = Jinja2Templates(directory="templates")
-VERSION = "1.0.1.0"
+VERSION = "1.0.1.1"
 
 LOCATIONS = None
 EM_LOCATIONS = None
@@ -24,12 +25,18 @@ def redirect_to_geordle():
 
 @app.get("/geordle")
 def geordle(request: Request):
-    return templates.TemplateResponse("geordle.html", {"request": request, "version": VERSION})
+    return templates.TemplateResponse(
+        "geordle.html",
+        {"request": request, "version": VERSION, "credentials": {"esri": Auth.ESRI_API_KEY, "maps": Auth.GOOGLE_API_KEY}}
+    )
 
 
 @app.get("/geordle/extreme")
 def extreme_mode(request: Request):
-    return templates.TemplateResponse("em_geordle.html", {"request": request, "version": VERSION})
+    return templates.TemplateResponse(
+        "em_geordle.html",
+        {"request": request, "version": VERSION, "credentials": {"esri": Auth.ESRI_API_KEY, "maps": Auth.GOOGLE_API_KEY}}
+    )
 
 
 @app.get("/geordle/user_data")

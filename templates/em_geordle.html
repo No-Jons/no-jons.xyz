@@ -94,7 +94,10 @@
         </div>
     </div>
 
-    <script>let extremeMode = true;</script>
+    <script>
+        let extremeMode = true;
+        let esriApiKey = "{{ credentials['esri'] }}";
+    </script>
     <script src="/static/js/saves.js?{{ version }}"></script>
     <script src="/static/js/streetview.js?{{ version }}"></script>
     <script src="/static/js/em-game.js?{{ version }}"></script>
