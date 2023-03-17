@@ -12,7 +12,7 @@ app = FastAPI(docs_url=None)
 
 app.mount("/static", StaticFiles(directory="static"), name="static")
 templates = Jinja2Templates(directory="templates")
-VERSION = "1.0.1.2"
+VERSION = "1.0.1.3"
 
 LOCATIONS = None
 EM_LOCATIONS = None

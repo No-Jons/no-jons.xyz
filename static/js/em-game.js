@@ -99,7 +99,7 @@ function reopenEndedGame(){
     let distance = Math.round(map.distance(gData.em_last_guess, curCoords));
     copyText += ("Distance: " + distance <= 1000 ? `${distance}m` : `${Math.round(distance / 1000)}km`)
     setGameStats();
-    $(".osm-open-game").hide();
+    $(".osm-open-map").hide();
     $("#game-over-container").show();
     $(".game-results-button").show();
     showActualLocation();
@@ -148,8 +148,8 @@ $("#copy-game-text").on("click", function() {
 
 $("#close-game-over").on("click", function() {
     $("#game-over-container").hide();
-    $("#osm-game-container").hide();
-    $(".osm-open-game").hide();
+    $("#osm-map-container").hide();
+    $(".osm-open-map").hide();
 });
 
 $(".game-results-button").on("click", function() {
