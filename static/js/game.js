@@ -19,14 +19,9 @@ function initializeGame(){
     if (gData.last_play === curDate)
         reopenEndedGame();
     else {
-        let mapCont = $("#osm-map-container");
-        mapCont.show();
-        if (map === undefined)
-            initializeMap();
-        if (previousGuesses.length === 0) {
-            mapCont.hide();
+        initializeMap();
+        if (previousGuesses.length === 0)
             return;
-        }
         let guessIDX = 1;
         for (let guess of previousGuesses) {
             appendGuess(map.distance(guess, curCoords));
@@ -34,7 +29,7 @@ function initializeGame(){
                 icon: guessIcon,
                 title: `Guess #${guessIDX}`
             }).addTo(map);
-            guessIDX++;
+            guessIDX += 1;
             guesses += 1;
         }
     }
@@ -86,11 +81,11 @@ function showActualLocation(){
         zoomOffset: -1
     }).addTo(endMap);
     L.marker(curCoords).bindTooltip("Actual Location", {direction: "top"}).addTo(endMap);
-    for (let i = 0; i < previousGuesses.length; i++)
+    for (let i = 0; i < previousGuesses.length; i++) {
         L.marker(previousGuesses[i], {icon: guessIcon}).bindTooltip(`Guess #${i + 1}`, {direction: "top"}).addTo(endMap);
+        L.polyline([curCoords, previousGuesses[i]], {color: "#DE3131", dashArray: "10 7"}).addTo(endMap);
+    }
     L.circle(curCoords, {radius: 1000, color: "#31DE37"}).addTo(endMap);
-    for (let coords of previousGuesses)
-        L.polyline([curCoords, coords], {color: "#DE3131", dashArray: "10 7"}).addTo(endMap);
     endMap.setView(curCoords, 12)
 }
 

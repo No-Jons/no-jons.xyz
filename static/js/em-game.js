@@ -15,13 +15,8 @@ function initializeGame(){
     $("#hard-mode-toggle").prop("checked", gData.hard_mode);
     if (gData.em_last_play === curDate)
         reopenEndedGame();
-    else {
-        let mapCont = $("#osm-game-container");
-        mapCont.show();
-        if (map === undefined)
-            initializeMap();
-        mapCont.hide();
-    }
+    else
+        initializeMap();
 }
 
 function initializeMap() {
